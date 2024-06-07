@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-// Örnek bir GET endpoint'i
-router.get('/example', (req, res) => {
-  res.json({ message: 'Bu bir örnek GET endpoint\'i!' });
-});
+const movieController = require('../controllers/movieController');
+
+// Kullanıcı kayıt ve giriş rotaları
+
+
+// Film rotaları
+router.get('/movies', movieController.getAllMovies);
+
 
 module.exports = router;
