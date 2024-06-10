@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+.home {
+  text-align: center;
+}
+
+.movie-card {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: left;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  margin: 10px 0;
+}
+
+.movie-card p {
+  margin: 5px 0;
+}
+
+.movie-card button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movie-card button:hover {
+  background-color: #0056b3;
+}
+
+.movie-card a {
+  display: block;
+  margin: 10px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.movie-card a:hover {
+  text-decoration: underline;
+}

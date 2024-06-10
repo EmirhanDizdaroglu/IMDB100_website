@@ -1,4 +1,117 @@
-.Home {
-    text-align: center;
+.home {
+  text-align: center;
+  padding: 20px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.movie-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 35px; /* Increase the gap for more space between cards */
+  justify-content: center;
+}
+
+.movie-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Ensure all cards have the same height */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 360px; /* Set a fixed height for the images */
+  object-fit: contain; /* Ensure the images fit within the container */
+  border-radius: 8px;
+}
+
+.movie-card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.movie-card p {
+  margin: 5px 0;
+  color: white;
+}
+
+.movie-card button {
+  margin-top: 10px;
+  background-color: #ffffff14;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.movie-card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.trailer-button {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none; /* Remove underline */
+}
+
+.trailer-button:hover {
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.slider-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .movie-card {
+    height:auto; /* Adjust height for smaller screens */
+    
+    
+  object-fit: contain; /* Ensure the images fit within the 
   }
-  
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    height: auto; /* Adjust height for smaller screens */
+  }
+}

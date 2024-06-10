@@ -1,30 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import './MovieDetail.css';
 
-const MoviesList = () => {
-  const [movies, setMovies] = useState([]);
+const MovieDetail = () => {
+  const { movieId } = useParams();
+  const { t } = useTranslation();
+  const [movie, setMovie] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // API'den veri çekmek için axios kullanımı
-    axios.get('http://localhost:3000/api/movies')
-      .then(response => {
-        setMovies(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the movies!', error);
-      });
-  }, []);
+    const fetchMovie = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/movies/${movieId}`);
+        const data = await response.json();
+        setMovie(data);
+      } catch (error) {
+        console.error('Error fetching movie details:', error);
+        setError(t('errorFetchingMovieDetails'));
+      }
+    };
+    fetchMovie();
+  }, [movieId, t]);
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (!movie) {
+    return <p>{t('loading')}</p>;
+  }
 
   return (
-    <div>
-      <h1>Movies List</h1>
-      <ul>
-        {movies.map(movie => (
-          <li key={movie.movie_id}>{movie.title} ({movie.release_year})</li>
-        ))}
-      </ul>
+    <div className="movie-detail">
+      <div className="movie-detail__header">
+        <h1>{movie.title}</h1>
+        <div className="movie-detail__rating">
+          <span>{t('imdbRating')}: {movie.imdb_score}</span>
+          <span>{t('popularity')}: {movie.popularity}</span>
+        </div>
+      </div>
+      <div className="movie-detail__content">
+        <img src={require(`../../assets/images/${movie.movie_id}.png`)} alt={`Movie ${movie.movie_id}`} className="movie-detail__image" />
+        <div className="movie-detail__video-container">
+          <video className="movie-detail__video" controls>
+            <source src={movie.trailer_url} type="video/mp4" />
+            {t('videoNotSupported')}
+          </video>
+        </div>
+      </div>
+      <div className="movie-detail__info">
+        <p>{movie.summary}</p>
+        <p>{t('actors')}: {movie.actors}</p>
+      </div>
     </div>
   );
 };
 
-export default MoviesList;
+export default MovieDetail;

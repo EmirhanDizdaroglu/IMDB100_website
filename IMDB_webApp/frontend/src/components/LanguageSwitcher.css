@@ -1,0 +1,42 @@
+.language-switcher {
+    position: relative;
+    margin-left: 18px; /* LanguageSwitcher butonunu 5px sağa kaydır */
+  }
+  
+  .selected-language {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .arrow-down {
+    margin-left: 5px; /* İki öğe arasındaki boşluk */
+  }
+  
+  .language-menu {
+    position: absolute;
+    top: 100%; /* Butonun altında başlamasını sağlar */
+    right: 0;
+    background-color: black; /* Arka plan rengini siyah yapar */
+    color: white; /* Yazı rengini beyaz yapar */
+    border-radius: 5px; /* Kenarlara hafif yuvarlaklık verir */
+    padding: 5px 0; /* İç boşluğu ayarlar */
+    width: 100px; /* Dropdown genişliğini ayarlar */
+    z-index: 1; /* Diğer öğelerin üstünde kalmasını sağlar */
+  }
+  
+  .language-menu button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .language-menu button:hover {
+    background-color: rgba(81, 80, 80, 0.778); /* Hover durumunda arka plan rengini siyahın biraz açık tonuna getirir */
+  }
+  

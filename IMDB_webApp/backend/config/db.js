@@ -1,19 +1,25 @@
-const mysql = require('mysql2/promise'); // Modülü ekleyin
+// IMDB_webApp\backend\config\db.js
+const mysql = require('mysql2/promise');
 
-const db = mysql.createPool({
+const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: '1234', // MySQL şifrenizi buraya yazın
-  database: 'imdb_webapp' // Kullanmak istediğiniz veritabanı adını buraya yazın
-});
+  password: '1234',
+  database: 'imdb_webapp'
+};
 
-db.getConnection()
-  .then(connection => {
-    console.log('MySQL bağlantısı başarıyla gerçekleştirildi...');
+const pool = mysql.createPool(dbConfig);
+
+const connectToDatabase = async () => {
+  try {
+    const connection = await pool.getConnection();
+    console.log('Connected to database.');
     connection.release(); // Bağlantıyı serbest bırak
-  })
-  .catch(err => {
-    console.error('MySQL bağlantısı başarısız oldu:', err);
-  });
+    return connection;
+  } catch (error) {
+    console.error('Database connection failed:', error.stack);
+    throw error;
+  }
+};
 
-module.exports = db;
+module.exports = connectToDatabase;

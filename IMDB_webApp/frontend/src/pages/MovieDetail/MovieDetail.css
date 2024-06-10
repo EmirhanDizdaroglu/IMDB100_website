@@ -1,4 +1,57 @@
-.MovieDetail {
-    text-align: center;
-  }
-  
+.movie-detail {
+  padding: 20px;
+  color: white;
+  background-color: #121212; /* Arka plan rengi eklendi */
+}
+
+.movie-detail__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.movie-detail__rating {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  color: white; /* Yazı rengi beyaz yapıldı */
+}
+
+.movie-detail__content {
+  display: flex;
+  flex-direction: row; /* Yatayda yerleştirildi */
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px; /* Görsel ve video arasındaki boşluk azaltıldı */
+}
+
+.movie-detail__image {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.movie-detail__video-container {
+ 
+  display: flex;
+  justify-content: center;
+}
+
+.movie-detail__video {
+  width: 100%;
+  height: 360px; /* Video boyutunu artırmak için height eklendi */
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.movie-detail__info {
+
+  text-align: center;
+  color: white; /* Yazı rengi beyaz yapıldı */
+  margin-top: 20px; /* Yazının en alta ortalanması için boşluk eklendi */
+}
+
+.movie-detail__info p {
+  color: white; /* Yazı rengi beyaz yapıldı */
+}

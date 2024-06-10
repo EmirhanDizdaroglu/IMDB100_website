@@ -1,0 +1,220 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  padding: 10px 20px; /* Padding adjusted for responsiveness */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.header__logo img {
+  width: 50px; /* Adjust the size as needed */
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.header__menu span {
+  margin-right: 5px; /* Menu yazısı ve ikon arasındaki boşluk */
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15px;
+}
+
+.hamburger-menu div {
+  width: 20px;
+  height: 2px;
+  margin-right: 5px;
+  background-color: white;
+}
+
+.header__all-toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.header__all-toggle::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 35px;
+  background-color: rgb(157, 152, 152);
+  position: absolute;
+  right: -10px;
+}
+
+.header__all-toggle span {
+  margin-right: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.header__search input {
+  border: none;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.header__search-results {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #121212;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 650px;
+  z-index: 1;
+}
+
+.header__search-results ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__search-results li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header__search-results li:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.header__search-results p {
+  margin: 0;
+  color: gray;
+}
+
+.header__extras {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the extras section to the right */
+}
+
+.header__extras span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.header__imdb-pro {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+}
+
+.header__imdb-pro::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 40px;
+  background-color: rgb(95, 93, 93);
+  position: absolute;
+  right: -15px;
+}
+
+.header__imdb-pro img {
+  width: 60px;
+  margin-left: 20px;
+}
+
+.arrow-down {
+  margin-left: 5px;
+}
+
+.header__dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.header__all {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #121212;
+  color: white;
+  border-radius: 5px;
+  width: 180px;
+  z-index: 1;
+}
+
+.header__all-item {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 0px;
+  width: 100%;
+  text-align: left;
+}
+
+.header__all-item:hover {
+  background-color: rgba(81, 80, 80, 0.778);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header__all-item {
+  list-style-type: none;
+  margin-left: -20px;
+}
+
+.header__account {
+  position: relative;
+  margin-left: 20px; /* Add margin to separate from other elements */
+}
+
+.header__dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .header__search {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .header__extras {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+  .header__menu, .header__all-toggle {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,80 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+  }
+  
+  .auth-container form {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .auth-container h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .auth-container label {
+    display: block;
+    color: white;
+    margin: 10px 0 5px;
+  }
+  
+  .auth-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .auth-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .auth-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .google-btn {
+    width: 300px;
+    padding: 10px;
+    background-color: #db4437;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .google-btn:hover {
+    background-color: #c33d2e;
+  }
+  
+  .auth-container .switch-button {
+    background-color: #ff7300;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .auth-container .switch-button:hover {
+    color: #ffffff;
+    background-color: #ab4d00;
+  }
+  
