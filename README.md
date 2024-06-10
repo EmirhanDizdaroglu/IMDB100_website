@@ -81,7 +81,7 @@ The application uses the following database schema:
 
 ## Video Presentation
 
-A short video presenting the project can be found at: [Video Presentation Link](#) (Replace with actual link)
+A short video presenting the project can be found at: https://drive.google.com/file/d/1F1qNpG5MvyU6lV2XmJrCZDusHBgnq2is/view?usp=sharing
 
 ## Installation
 
@@ -90,6 +90,8 @@ A short video presenting the project can be found at: [Video Presentation Link](
 - Node.js
 - MySQL
 - Firebase account
+- express.js
+- react.js
 
 ### Backend
 
